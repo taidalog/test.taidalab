@@ -102,7 +102,7 @@
                     <span class=""><sub id="secondRowSrcRadix"></sub></span>\r
                 </div>\r
                 <div class="under-line"></div>\r
-            </div>`,_o="https://taidalog.github.io",H="/taidalab/";function yr(e){const n=e.searchParams.get("pathname");if(n!=null){const r=n,s=e.searchParams;return s.delete("pathname"),T(s)===""?new URL(e.origin+r):new URL(e.origin+r+"?"+T(s))}else return e}function Ao(e,t){return t.origin===e?t.pathname.startsWith(H):!1}function yn(e){return Ao(_o,e)}const Lo=`\r
+            </div>`,_o="https://taidalog.github.io",H="/test.taidalab/";function yr(e){const n=e.searchParams.get("pathname");if(n!=null){const r=n,s=e.searchParams;return s.delete("pathname"),T(s)===""?new URL(e.origin+r):new URL(e.origin+r+"?"+T(s))}else return e}function Ao(e,t){return t.origin===e?t.pathname.startsWith(H):!1}function yn(e){return Ao(_o,e)}const Lo=`\r
         <div class="home-center">\r
             <p>\r
                 <span class="home-title" translate="no">taidalab</span><br>\r
