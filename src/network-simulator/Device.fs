@@ -5,6 +5,8 @@
 // https://github.com/taidalog/taidalab/blob/main/LICENSE
 namespace Taidalab
 
+open Fable.Core
+open Fable.Core.JsInterop
 open Browser.Dom
 open Browser.Types
 open Fermata
@@ -93,3 +95,28 @@ module Device =
         | Client d -> d.Name
         | Router d -> d.Name
         | Hub d -> d.Name
+
+    let removeSelectedClass () =
+        document.getElementsByClassName "selected"
+        |> JS.Constructors.Array?from
+        |> Array.iter (fun (x: HTMLElement) -> x.classList.remove "selected")
+
+    let onMouseMove (container: HTMLElement) (svg: HTMLElement) (event: Event) : unit =
+        let event = event :?> MouseEvent
+        let top = (event.pageY - svg.getBoundingClientRect().height / 2.)
+        let left = (event.pageX - svg.getBoundingClientRect().width / 2.)
+        let styleString = sprintf "top: %fpx; left: %fpx;" top left
+        container.setAttribute ("style", styleString)
+
+    let setMouseMoveEvent (container: HTMLElement) : unit =
+        let svg = document.getElementById (container.id + "Svg")
+        svg.ondragstart <- fun e -> e.preventDefault ()
+        let onMouseMove' = onMouseMove container svg
+
+        svg.onmousedown <-
+            fun _ ->
+                removeSelectedClass ()
+                container.classList.add "selected"
+                document.addEventListener ("mousemove", onMouseMove')
+
+                svg.onmouseup <- fun _ -> document.removeEventListener ("mousemove", onMouseMove')
