@@ -1,6 +1,6 @@
 # taidalab
 
-Version 5.0.4
+Version 5.2.0
 
 [Japanese README](README.ja.md)
 
@@ -20,9 +20,9 @@ A Web application for learning Informatics &#8544;, one of the subjects taught i
 
 ## Recommended environment
 
-- Mozilla Firefox 133.0.3 (64 bit) or later.
-- Google Chrome 131.0.6778.205 (64 bit) or later.
-- Microsoft Edge 131.0.2903.112 (64 bit) or later.
+- Mozilla Firefox 140.0.4 (64 bit) or later.
+- Google Chrome 138.0.7204.101 (64 bit) or later.
+- Microsoft Edge 138.0.3351.83 (64 bit) or later.
 - Safari 16.6 (iOS 16.6) or later.
 
 ## Terms of Service
@@ -34,7 +34,8 @@ A Web application for learning Informatics &#8544;, one of the subjects taught i
 
 ## Known Issue
 
-- On network-simulator page, when clicking a device or a LAN cable which is over another device or LAN cable, both the clicked element and the other one are dragged, and stick to the cursor even after stopping clicking.
+- The network-simulator is not available with a device with a small screen such as a smartphone.
+- The network-simulator is not available with touch operation.
 
 ## Release Notes
 

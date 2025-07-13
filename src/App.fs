@@ -1,6 +1,6 @@
 // taidalab
 // https://github.com/taidalog/taidalab
-// Copyright (c) 2022-2024 taidalog
+// Copyright (c) 2022-2025 taidalog
 // This software is licensed under the MIT License.
 // https://github.com/taidalog/taidalab/blob/main/LICENSE
 namespace Taidalab
@@ -19,7 +19,7 @@ module Main =
         document.body.innerHTML <- ""
         document.body.innerHTML <- Content.Common.body
         (document.querySelector "footer").innerHTML <- Content.Common.footer
-        (document.querySelector "aside").innerHTML <- Content.Common.aside
+        (document.querySelector "nav").innerHTML <- Content.Common.nav
 
     window.addEventListener (
         "DOMContentLoaded",
@@ -53,7 +53,7 @@ module Main =
             // Debug.WriteLine mergedUrl
 
             let links: HTMLAnchorElement array =
-                (document.querySelector "aside").querySelectorAll "a"
+                (document.querySelector "nav").querySelectorAll "a"
                 |> JS.Constructors.Array?from
 
             links

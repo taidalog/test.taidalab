@@ -1,6 +1,6 @@
 // taidalab
 // https://github.com/taidalog/taidalab
-// Copyright (c) 2022-2024 taidalog
+// Copyright (c) 2022-2025 taidalog
 // This software is licensed under the MIT License.
 // https://github.com/taidalog/taidalab/blob/main/LICENSE
 namespace Taidalab
@@ -14,6 +14,7 @@ module About =
         <p>
             <span translate="no">taidalab</span>（タイダラブ）は、<span translate="no">taidalog</span> が作成したプログラム置き場です。<br>
             10進数と2進数の変換の反復練習ツールなど、高校の「情報&#8544;」の学習ツールを中心に公開しています。<br>
+            利用前に<a translate="no" href="https://github.com/taidalog/taidalab/blob/main/README.ja.md">README</a>をご一読ください。<br>
             <span translate="no">F#</span> で書いたものを <span translate="no">Fable</span> で <span translate="no">JavaScript</span> にトランスパイルしています。<span translate="no">F#</span> 楽しい。
         </p>
         <h2>それぞれのページについて</h2>
@@ -24,14 +25,14 @@ module About =
             <dd>
                 %s{EndlessBinary.Dec2Bin1.help}
             </dd>
-            
+
             <dt>
                 <h3><a href="%s{Url.home}endless-binary/dec2bin-2/">10進数→2進数 (2)</a></h3>
             </dt>
             <dd>
                 %s{EndlessBinary.Dec2Bin2.help}
             </dd>
-            
+
             <dt>
                 <h3><a href="%s{Url.home}endless-binary/bin2dec-1/">2進数→10進数 (1)</a></h3>
             </dt>
@@ -52,7 +53,7 @@ module About =
             <dd>
                 %s{EndlessBinary.PowerOfTwo1.help}
             </dd>
-            
+
             <dt>
                 <h3><a href="%s{Url.home}endless-binary/power-of-two-2/">2のn乗-1</a></h3>
             </dt>
@@ -73,7 +74,7 @@ module About =
             <dd>
                 %s{EndlessBinary.Subtraction.help}
             </dd>
-            
+
             <dt>
                 <h3><a href="%s{Url.home}endless-binary/complement/">補数</a></h3>
             </dt>
@@ -94,14 +95,14 @@ module About =
             <dd>
                 %s{EndlessBinary.Hex2Dec.help}
             </dd>
-            
+
             <dt>
                 <h3><a href="%s{Url.home}iro-iroiro/">色いろいろ</a></h3>
             </dt>
             <dd>
                 %s{IroIroiro.help}
             </dd>
-            
+
             <dt>
                 <h3><a href="%s{Url.home}network-simulator/">ネットワークシミュレータ</a></h3>
             </dt>
@@ -119,17 +120,17 @@ module About =
 
         (document.getElementById "hamburgerButton").onclick <-
             (fun _ ->
-                (document.querySelector "aside").classList.toggle "flagged" |> ignore
+                (document.querySelector "nav").classList.toggle "flagged" |> ignore
                 (document.getElementById "barrier").classList.toggle "flagged" |> ignore
                 (document.querySelector "main").classList.toggle "flagged" |> ignore)
 
         (document.getElementById "barrier").onclick <-
             (fun _ ->
-                (document.querySelector "aside").classList.remove "flagged" |> ignore
+                (document.querySelector "nav").classList.remove "flagged" |> ignore
                 (document.getElementById "barrier").classList.remove "flagged" |> ignore
                 (document.querySelector "main").classList.remove "flagged" |> ignore)
 
-        (document.querySelector "#headerTitle").innerHTML <- """<h1>about - <span translate="no">taidalab</span></h1>"""
+        (document.querySelector "#headerTitle").innerHTML <- """<span>about - </span><span translate="no">taidalab</span>"""
         (document.querySelector "main").innerHTML <- main
 
         // Resets keyboard shortcuts.

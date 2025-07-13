@@ -1,6 +1,6 @@
 // taidalab
 // https://github.com/taidalog/taidalab
-// Copyright (c) 2022-2024 taidalog
+// Copyright (c) 2022-2025 taidalog
 // This software is licensed under the MIT License.
 // https://github.com/taidalog/taidalab/blob/main/LICENSE
 namespace Taidalab
@@ -27,13 +27,3 @@ module Text =
         replaceWithPairs replacements input
 
     let escapeSpace (input: string) = input.Replace(" ", "&nbsp;")
-
-    let padWithZero binaryDigit text =
-        Fermata.String.padLeft binaryDigit '0' text
-
-    let colorLeadingZero str =
-        str
-        |> (String.rev >> String.tail >> String.rev)
-        |> String.splitFind ((<>) '0')
-        |> fun (left, right) -> $"""<span class="zero-gray">%s{left}</span>%s{right}"""
-        |> fun x -> x + (str |> String.last)
