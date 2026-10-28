@@ -20,7 +20,8 @@ module Terms =
         document.title <- "ご利用について - taidalab"
 
         let header = document.querySelector "header"
-        header.innerHTML <- Content.Common.headerNoHelp
+        header.innerHTML <- ""
+        Content.Common.headerNoHelp |> List.iter (header.appendChild >> ignore)
         header.className <- "home"
 
         (document.getElementById "hamburgerButton").onclick <-
@@ -39,6 +40,7 @@ module Terms =
             """<span>ご利用について - </span><span translate="no">taidalab</span>"""
 
         (document.querySelector "main").innerHTML <- main
+        (document.querySelector "main").className <- "home"
 
         // Resets keyboard shortcuts.
         document.onkeydown <- fun _ -> ()
