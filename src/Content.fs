@@ -1,6 +1,6 @@
 // taidalab
 // https://github.com/taidalog/taidalab
-// Copyright (c) 2022-2025 taidalog
+// Copyright (c) 2022-2026 taidalog
 // This software is licensed under the MIT License.
 // https://github.com/taidalog/taidalab/blob/main/LICENSE
 namespace Taidalab
@@ -140,7 +140,7 @@ module Content =
               span { id "dstRadix" }
               span { innerText "進法で表すと？" } ]
 
-        let version = "Version 5.2.0"
+        let version = "Version 5.2.1"
 
         let footer: Browser.Types.HTMLElement list =
             [ small {
